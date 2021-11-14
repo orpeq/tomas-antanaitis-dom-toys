@@ -1,0 +1,23 @@
+{
+  "name": "tomas-antanaitis-dom-toys",
+  "version": "1.0.0",
+  "description": "DOM bandomasis #2",
+  "main": "index.js",
+  "scripts": {
+    "start-unix": "node_modules/.bin/json-server --watch database.json",
+    "start-win": "node_modules\\.bin\\json-server --watch database.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orpeq/tomas-antanaitis-dom-toys.git"
+  },
+  "author": "Tomas Antanaitis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orpeq/tomas-antanaitis-dom-toys/issues"
+  },
+  "homepage": "https://github.com/orpeq/tomas-antanaitis-dom-toys#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}
