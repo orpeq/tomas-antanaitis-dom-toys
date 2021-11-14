@@ -1,0 +1,66 @@
+{
+    "toy": [
+        {
+            "id": "1",
+            "title": "Lėktuvas",
+            "price": {
+                "currency": "€",
+                "amount": 49.50
+            },
+            "ageRestrictions": {
+                "from": 3
+            },
+            "discount": {
+                "type": "percentage",
+                "amount": 20
+            },
+            "imgSrc": "https://m.media-amazon.com/images/I/81f5PCrNvdL._AC_SX425_.jpg"
+        },
+        {
+            "id": "2",
+            "title": "RC mašinėlė",
+            "price": {
+                "currency": "€",
+                "amount": 121.59
+            },
+            "ageRestrictions": null,
+            "discount": {
+                "type": "toFixed",
+                "amount": 1.6
+            },
+            "imgSrc": "https://i5.walmartimages.com/asr/dd4a53a0-34b4-45fc-8a16-22705dbb09d2.d7d7b771a6c9e89069cf580411905d76.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
+        },
+        {
+            "id": "3",
+            "title": "Cards against Humanity",
+            "price": {
+                "currency": "$",
+                "amount": 39.99
+            },
+            "ageRestrictions": {
+                "from": 18
+            },
+            "discount": {
+                "type": "amount",
+                "amount": 5.99
+            },
+            "imgSrc": "https://cdn.shopify.com/s/files/1/0525/0416/6558/products/1_Zaidimo_Kortos_Cards_Against_Humanity_1000x.jpg?v=1625914882"
+        },
+        {
+            "id": "4",
+            "title": "Playstation 5",
+            "price": {
+                "currency": "$",
+                "amount": 599.99
+            },
+            "ageRestrictions": {
+                "from": 18
+            },
+            "discount": {
+                "type": "percentage",
+                "amount": 10
+            },
+            "imgSrc": "https://images.kaina24.lt/167/21/sony-playstation-5-2.jpg"
+        }
+    ]
+}
