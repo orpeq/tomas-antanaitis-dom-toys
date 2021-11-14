@@ -7,13 +7,36 @@ class ToyGridComponent {
         this.init();
     }
 
-    fetchToys = () => API.fetchToys(this.saveToys, alert);
 
-    saveToys = (toys) => {
-        this.state.toys = toys;
-        this.state.loading = false;
+    fetchToys = () => 
+    setTimeout(() => {
+    API.fetchToys(
+        (toys) => {
+            this.state.loading = false;
+            this.saveToys(toys);
+        },
+        (err) => {
+        alert(err)
+        this.state.loading = false
         
         this.render();
+        }
+        );
+    }, 1000);
+
+    saveToys = (toys) => {
+        this.state.toys = toys; 
+        
+        this.render();
+    }
+
+    deleteToy = (id) => {
+        API.deleteToy(
+            id, 
+            () => API.fetchToys(this.saveToys, alert), 
+            alert
+            );
+
     }
 
 
@@ -33,6 +56,8 @@ class ToyGridComponent {
         return column;
     }
 
+    
+
     render = () => {
         const {loading, toys} = this.state;
         if(loading) {
@@ -40,7 +65,10 @@ class ToyGridComponent {
         } else if(toys.length > 0) {
             this.htmlElement.innerHTML = '';
             const toyElements = toys
-            .map(x => new ToyCardComponent(x))
+            .map(({id, ...props}) => new ToyCardComponent({
+                ...props,
+                onDelete: () => this.deleteToy(id)
+            }))
             .map(x => x.htmlElement)
             .map(this.wrapInColumn)
             this.htmlElement.append(...toyElements);

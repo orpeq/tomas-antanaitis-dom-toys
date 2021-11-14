@@ -71,7 +71,10 @@ class ToyCardComponent{
             ${this.formatPrice()}
         </div>
         ${this.ageRestriction()}
-        </div>
-        ` 
+        <button class="btn btn-danger position-absolute top-0">Trintukas</button>
+        </div>`
+
+        const btn = this.htmlElement.querySelector('.btn');
+        btn.addEventListener('click', onDelete);
     }
 }

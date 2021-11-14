@@ -4,18 +4,16 @@ class API {
     
     
     static fetchToys = (success, failure) => {
-        setTimeout(() => {
         fetch(`${baseURL}/toys`)
         .then(res => res.json())
         .then(success)
         .catch(failure)
-        }, 1000);
+        
     }
 
     static deleteToy = (id, success, failure) => {
         fetch(`${baseURL}/toys/${id}`, { method: 'DELETE' })
-          .then(res => res.json())
-          .then(success)
+          .then(res => res.ok ? success () : failure(res.statusText))
           .catch(failure)
       }
 }
