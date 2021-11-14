@@ -10,9 +10,10 @@ class API {
 
     static deleteToy = (id, success, failure) => {
         fetch(`${baseURL}/toys/${id}`, { method: 'DELETE' })
-        .then(res => res.ok ? success() : failure(res.statusText))
-        .catch(failure)
-    }
+          .then(res => res.json())
+          .then(success)
+          .catch(failure)
+      }
 }
 
 // API.fetchToys(
